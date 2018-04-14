@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Odev2 - ChatAPP</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <ul class="pages">
+    <li class="chat page">
+      <div class="container">
+        <div style="height: 100vmin; overflow:hidden;" class="row align-items-center">
+            <div class="col-lg-3 col-md-2"></div>
+            <div  class="col-lg-6 col-md-8 col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row align-items-center">
+                            <div style:"float:left;">
+                                <img class="card-img-top" src="/img/yesil.png" alt="Card image cap" style="width:60px;">
+                            </div>
+                            <div >
+                                <a id="logoText"  style="font-size:40px;">ChatApp</a>                                   
+                            </div>
+                            <div class="UserhataMesajı"></div>
+                            
+                        </div>  
+                    </div>
+                    <div class="card-body">
+                        <nav style="margin-top:-18px;">
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <a class="nav-item nav-link active" id="All-tab" data-toggle="tab" href="#All" role="tab" aria-controls="nav-All" aria-selected="true" onclick=""><strong>All Chat Room</strong></a>
+                                <a class="nav-item nav-link" id="P2P-tab" data-toggle="tab" href="#P2P" role="tab" aria-controls="nav-P2P" aria-selected="false" onclick=""><strong>P2P Chat Room</strong></a>
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="myTabContent">
+                            <!-- All Chat Room -->
+                            <div class="tab-pane fade show active" id="All" role="tabpanel" aria-labelledby="nav-All"> 
+                                <ul id="All-Room-Messages" class="messages"></ul>
+                                <div class="row">
+                                  <div class="col-9">
+                                      <input id="mesajGir" class="inputMessage" autocomplete="off" />
+                                  </div>
+                                  <div class="col-3">
+                                      <button>Send</button>
+                                  </div>
+                                </div>
+                            </div>  
+                            <!-- P2P Chat Room -->
+                            <div class="tab-pane fade" id="P2P" role="tabpanel" aria-labelledby="nav-P2P">
+                                <div class="row">
+                                  <ul id="P2P-Users" class="col-3">
+                                      <li class='username' name="Fatih" onclick="console.log(this.value)">Fatih<span class="badge badge-primary">0</span><li/>
+                                  </ul>
+                                  <div class="col-9">
+                                    <ul id="All-Room-Messages" class="P2Pmessages">
+                                        <h5 id="P2P-Users-Baslik" style="color: #1B5E20"></h5>
+                                    </ul>
+                                    <div class="row">
+                                        <div class="col-9">
+                                          <input id="mesajGir" class="P2PinputMessage" autocomplete="off" />
+                                        </div>
+                                        <div class="col-3">
+                                          <button>Send</button>
+                                        </div>
+                                    </div>
+                                      
+                                  </div>
+                                </div> 
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+            <div  class="col-lg-3 col-md-2"></div>
+        </div>
+    </div>
+    </li>
+    <li class="login page">
+      <div class="form">
+        <h3 class="title">Bir Nick Name Giriniz!</h3>
+        <input class="usernameInput" type="text" maxlength="14" />
+      </div>
+    </li>
+  </ul>
+
+  <script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/jquery-1.10.2.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/jquery.cookie.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
